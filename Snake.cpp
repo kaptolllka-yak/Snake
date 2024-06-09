@@ -308,7 +308,7 @@ public:
 		}
 		field[head_point.Get_y()][head_point.Get_x()] = object_head;
 	}
-	void Chech_KeyBoard_Value() {
+ void Chech_KeyBoard_Value() {
 		if (_kbhit()) {
 			char last_ch = ch;
 			ch = _getch();
@@ -337,6 +337,11 @@ public:
 			}
 		}
 	}
+ void Check_Exit_Value() {
+  setlocale(LC_ALL, "ru");
+  std::cout << std::endl << "Нажмите любую кнопку, чтобы закрыть это окно:";
+  char ch = _getch();
+ }
 };
 
 int main() {
@@ -353,6 +358,7 @@ int main() {
 #endif
 		if (Snake.Get_Object_Code_Value()) {
 			std::cout << std::endl << "Game Over!" << std::endl;
+   Snake.Check_Exit_Value();
 			break;
 		}
 		Snake.Sleep(200);
