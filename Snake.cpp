@@ -337,11 +337,11 @@ public:
 			}
 		}
 	}
- void Check_Exit_Value() {
-  setlocale(LC_ALL, "ru");
-  std::cout << std::endl << "Нажмите любую кнопку, чтобы закрыть это окно:";
-  char ch = _getch();
- }
+    void Check_Exit_Value() {
+        setlocale(LC_ALL, "ru");
+        std::cout << std::endl << "Нажмите любую кнопку, чтобы закрыть это окно:";
+        char ch = _getch();
+    }
 };
 
 int main() {
@@ -358,7 +358,7 @@ int main() {
 #endif
 		if (Snake.Get_Object_Code_Value()) {
 			std::cout << std::endl << "Game Over!" << std::endl;
-   Snake.Check_Exit_Value();
+            Snake.Check_Exit_Value();
 			break;
 		}
 		Snake.Sleep(200);
